@@ -1,0 +1,26 @@
+@use '../vars';
+@use '../mixins' as *;
+@use '../layout';
+
+section {
+  background-color: vars.$violet100;
+  background-image: url('../../assets/img/bg-boost-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: vars.$padding-l 0;
+  color: vars.$white;
+
+  h2 {
+    font-size: 1.56em;
+    margin-bottom: vars.$padding-s;
+  }
+
+  .container {
+    @extend %container;
+    text-align: center;
+  }
+
+  @include break('medium') {
+    background-image: url('../../assets/img/bg-boost-desktop.svg');
+  }
+}
