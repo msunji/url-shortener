@@ -1,8 +1,10 @@
 @use 'vars';
-
 body {
   font-size: 18px;
   font-family: vars.$sansSerif;
+}
+a, a:visited {
+  text-decoration: none;
 }
 
   
