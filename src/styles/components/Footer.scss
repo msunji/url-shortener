@@ -1,0 +1,55 @@
+@use '../vars';
+@use '../layout';
+
+footer {
+  background-color: vars.$violet200;
+  color: vars.$white;
+  padding: vars.$padding-l 0;
+
+  .footer-container {
+    @extend %container;
+    display: grid;
+    gap: vars.$padding-l;
+  }
+
+  .logo-container {
+    text-align: center;
+    .logo {
+      path {
+        fill: vars.$white;
+      }
+    }
+  }
+
+  .link-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    h4 {
+      font-size: 0.88em;
+    }
+
+    span {
+      font-size: 0.83em;
+      color: vars.$grey100;
+      cursor: pointer;
+      line-height: 1.7;
+
+      &:hover {
+        color: vars.$cyan;
+      }
+    }
+  }
+
+  @media (min-width: vars.$screen-s) {
+    .footer-container {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+    }
+
+    .link-container {
+      text-align: left;
+    }
+  }
+}
