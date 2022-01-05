@@ -1,0 +1,23 @@
+@use '../vars';
+
+$colors: (
+  'cyan': vars.$cyan,
+  'violet': vars.$violet100,
+);
+
+button {
+  color: vars.$white;
+  outline: none;
+  border: none;
+  padding: calc(vars.$padding-s/1.4) vars.$padding-m;
+
+  &.pill {
+    border-radius: 99em;
+  }
+}
+
+@each $name, $color in $colors {
+  .button-#{$name} {
+    background-color: $color;
+  }
+}
