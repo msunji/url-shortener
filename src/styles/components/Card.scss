@@ -1,0 +1,39 @@
+@use '../vars';
+
+$icons: (
+  'recognition': '../../assets/img/icon-brand-recognition.svg',
+  'records': '../../assets/img/icon-detailed-records.svg',
+  'customisable': '../../assets/img/icon-fully-customizable.svg',
+);
+
+.card {
+  @each $name, $icon in $icons {
+    &__icon-#{$name} {
+      border-radius: 50%;
+      height: 88px;
+      width: 88px;
+      background-color: vars.$violet100;
+      background-image: url($icon);
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__inner {
+    background-color: vars.$white;
+    border-radius: 5px;
+    padding: 2em;
+    text-align: center;
+
+    h3 {
+      color: vars.$blue;
+      margin-bottom: vars.$padding-s;
+    }
+
+    p {
+      font-size: 0.83em;
+      color: vars.$grey200;
+      line-height: 1.7;
+    }
+  }
+}
