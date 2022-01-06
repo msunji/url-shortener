@@ -6,10 +6,16 @@ $colors: (
 );
 
 button {
+  cursor: pointer;
   color: vars.$white;
   outline: none;
   border: none;
   padding: calc(vars.$padding-s/1.4) vars.$padding-m;
+  transition: filter 0.4s ease;
+
+  &:hover {
+    filter: contrast(1) brightness(125%) saturate(0.5);
+  }
 
   &.pill {
     border-radius: 99em;
