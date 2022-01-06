@@ -4,8 +4,7 @@
 
 .statistics {
   background-color: vars.$grey;
-  // padding: vars.$padding-l 0;
-
+  
   &__container {
     @extend %container;
   }
