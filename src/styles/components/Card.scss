@@ -7,8 +7,17 @@ $icons: (
 );
 
 .card {
+  position: relative;
+  &__icon {
+    display: flex;
+    padding: 0 2em;
+    justify-content: space-around;
+  }
   @each $name, $icon in $icons {
     &__icon-#{$name} {
+      position: absolute;
+      top: -50px;
+      margin: auto;
       border-radius: 50%;
       height: 88px;
       width: 88px;
@@ -22,7 +31,7 @@ $icons: (
   &__inner {
     background-color: vars.$white;
     border-radius: 5px;
-    padding: 2em;
+    padding: 4em 2em 2em 2em;
     text-align: center;
 
     h3 {
