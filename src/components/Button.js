@@ -1,10 +1,8 @@
 import '../styles/components/Button.scss';
 
-
-const Button = (props) =>{
+const Button = ({ color, shape, children }) =>{
   return (
-    <button className={`button-${props.color} ${props.shape}`}>{props.children}</button>
+    <button className={`button-${color} ${shape}`}>{children}</button>
   )
 }
-
 export default Button;
