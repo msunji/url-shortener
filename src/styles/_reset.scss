@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 body,
 h1,
 h2,
