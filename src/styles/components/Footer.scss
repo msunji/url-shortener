@@ -9,8 +9,13 @@ footer {
 
   .footer-container {
     @extend %container;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: vars.$padding-l;
+
+    div {
+      flex: 1;
+    }
   }
 
   .logo-container {
@@ -43,10 +48,28 @@ footer {
     }
   }
 
+  .icon-container {
+    text-align: center;
+    svg {
+      display: inline-block;
+      cursor: pointer;
+      &:not(:last-of-type) {
+        margin-right: 15px;
+      }
+      path {
+        transition: fill 0.4s ease;
+      }
+      &:hover {
+        path {
+          fill: vars.$cyan;
+        }
+      }
+    }
+  }
+
   @include break('medium') {
     .footer-container {
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: auto;
+      flex-direction: row;
     }
     .link-container {
       text-align: left;
