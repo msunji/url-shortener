@@ -2,12 +2,11 @@
 @use '../mixins' as *;
 @use '../layout';
 
-section {
+.cta {
   background-color: vars.$violet100;
   background-image: url('../../assets/img/bg-boost-mobile.svg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding: vars.$padding-l 0;
   color: vars.$white;
 
   h2 {
