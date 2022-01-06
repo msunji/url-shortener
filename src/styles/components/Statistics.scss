@@ -40,8 +40,10 @@
       margin-bottom: vars.$padding-s;
     }
     p {
+      margin: auto;
       color: vars.$grey200;
       line-height: 1.6;
+      max-width: 45ch;
     }
   }
 
