@@ -14,6 +14,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
   }
   .mobile-toggle {
     height: 21px;
@@ -27,6 +28,47 @@ nav {
       background-color: vars.$grey200;
     }
   }
+  .nav__links {
+    display: none;
+    span {
+      cursor: pointer;
+      width: 100%;
+      color: vars.$white;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      font-size: 1em;
+      padding: vars.$padding-s 0;
+
+      &:hover {
+        color: vars.$grey200;
+      }
+    }
+
+    &.open {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      background-color: vars.$violet100;
+      padding: vars.$padding-m;
+      border-radius: 10px;
+      z-index: 2;
+    }
+
+    &--right, 
+    &--left {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    hr {
+      width: 100%;
+      color: vars.$grey200;
+      opacity: 0.25;
+    }
+  }
 
   @include break('medium') {
     .mobile-toggle {
@@ -38,7 +80,18 @@ nav {
       align-items: center;
       justify-content: space-between;
 
+      &--right,
+      &--left {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      hr {
+        display: none;
+      }
+
       span {
+        width: auto;
         font-size: 0.83em;
         color: vars.$grey200;
       }
