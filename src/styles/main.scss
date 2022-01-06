@@ -2,6 +2,7 @@
 body {
   font-size: 18px;
   font-family: vars.$sansSerif;
+  overflow-x: hidden;
 }
 section {
   padding: vars.$padding-xl 0;
