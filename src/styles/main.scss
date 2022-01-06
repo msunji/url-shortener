@@ -3,6 +3,9 @@ body {
   font-size: 18px;
   font-family: vars.$sansSerif;
 }
+section {
+  padding: vars.$padding-xl 0;
+}
 a, a:visited {
   text-decoration: none;
 }
