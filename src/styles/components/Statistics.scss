@@ -48,7 +48,7 @@
   @include break('medium') {
     .statistics__grid {
       flex-direction: row;
-      gap: vars.$padding-l;
+      gap: vars.$padding-m;
       align-items: stretch;
 
       &::after {
