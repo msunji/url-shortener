@@ -1,11 +1,13 @@
 import '../styles/components/Card.scss';
 
-const Card = (props) => {
+const Card = ({ icon, children }) => {
   return (
     <div className="card">
-      <div className={`card__icon-${props.icon}`} />
+      <div className="card__icon">
+        <div className={`card__icon-${icon}`} />
+      </div>
       <div className="card__inner">
-        { props.children }
+        {children}
       </div>
     </div>
   )
