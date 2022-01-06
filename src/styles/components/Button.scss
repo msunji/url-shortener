@@ -10,6 +10,7 @@ button {
   color: vars.$white;
   outline: none;
   border: none;
+  font-weight: bold;
   padding: calc(vars.$padding-s/1.4) vars.$padding-m;
   transition: filter 0.4s ease;
 
