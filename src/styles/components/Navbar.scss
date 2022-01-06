@@ -1,0 +1,55 @@
+@use '../vars';
+@use '../layout';
+@use '../mixins' as *;
+
+nav {
+  padding: vars.$padding-m 0;
+  .nav__logo {
+    margin-right: 2rem;
+    width: auto;
+    overflow: visible;
+  }
+  .nav__container {
+    @extend %container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mobile-toggle {
+    height: 21px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor: pointer;
+    div {
+      width: 24px;
+      height: 3px;
+      background-color: vars.$grey200;
+    }
+  }
+
+  @include break('medium') {
+    .mobile-toggle {
+      display: none;
+    }
+    .nav__links {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+
+      span {
+        font-size: 0.83em;
+        color: vars.$grey200;
+      }
+      span:not(:nth-of-type(3)) {
+        margin-right: 2rem;
+      }
+
+      button {
+        font-size: 0.83em;
+        padding: 0.56rem 1.5rem;
+      }
+    }
+  }
+}
