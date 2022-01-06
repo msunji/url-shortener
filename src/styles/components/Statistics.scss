@@ -1,17 +1,32 @@
 @use '../vars';
 @use '../layout';
+@use '../mixins' as *;
 
 .statistics {
   background-color: vars.$grey;
-  padding: vars.$padding-l 0;
+  // padding: vars.$padding-l 0;
 
   &__container {
     @extend %container;
   }
 
   &__grid {
-    display: grid;
-    gap: vars.$padding-l;
+    display: flex;
+    flex-direction: column;
+    gap: calc(2*vars.$padding-l);
+    position:relative;
+    z-index: 2;
+    align-items: center;
+
+    &::after {
+      content: '';
+      width: 8px;
+      height: 100%;
+      background-color: vars.$cyan;
+      position: absolute;
+      top: 0;
+      z-index: -1;
+    }
   }
 
   &__text {
@@ -26,7 +41,26 @@
     }
     p {
       color: vars.$grey200;
-      line-height: 1.78;
+      line-height: 1.6;
+    }
+  }
+
+  @include break('medium') {
+    .statistics__grid {
+      flex-direction: row;
+      gap: vars.$padding-l;
+      align-items: stretch;
+
+      &::after {
+        content: '';
+        width: 100%;
+        height: 8px;
+        background-color: vars.$cyan;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: -1;
+      }
     }
   }
 }
