@@ -1,2 +1,8 @@
 # Frontend Mentor Challenges: URL Shortening Landing Page
-Fill this in later
+
+Users should be able to: 
+- View the optimal layout depending on their screen size
+- Shorten any valid URL
+- See a list of their shortened links even after refreshing their browser
+- Copy the shortened link to their clipboard in a single click
+- Receive an error message when the form is submitted if the input field is left empty
