@@ -17,9 +17,11 @@ button {
   &:hover {
     filter: contrast(1) brightness(125%) saturate(0.5);
   }
-
   &.pill {
     border-radius: 99em;
+  }
+  &.rounded {
+    border-radius: 5px;
   }
 }
 
