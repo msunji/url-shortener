@@ -3,6 +3,7 @@
 @use '../mixins' as *;
 
 .statistics {
+  padding: 0 0 vars.$padding-xl 0;
   background-color: vars.$grey;
   
   &__container {
