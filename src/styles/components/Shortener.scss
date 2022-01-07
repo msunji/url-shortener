@@ -4,17 +4,101 @@
 .shortener {
   position: relative;
   top: -50px;
-  &__form {
+  &__container {
     width: 100%;
     background: vars.$violet100 url('../../assets/img/bg-shorten-mobile.svg') no-repeat top right;
     padding: vars.$padding-m;
     border-radius: 10px;
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      input {
+        outline: none;
+        width: 100%;
+        border: none;
+        flex: 1;
+        padding: calc(vars.$padding-s/1.4) vars.$padding-s;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        color: vars.$blue-desat;
+
+        &::placeholder {
+          color: vars.$blue-desat;
+        }
+      }
+    }
+  }
+  &__links {
+    margin-top: vars.$padding-m;
+    width: 100%;
+
+    .link {
+      background-color: vars.$white;
+      width: 100%;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+
+      p {
+        padding: vars.$padding-s vars.$padding-m;
+        width: 100%;
+      }
+
+      &--original {
+        color: vars.$blue;
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 2;
+        border-bottom: 1px solid vars.$grey100;
+      }
+      &--shortened {
+        color: vars.$cyan;
+        flex: 1;
+      }
+      button {
+        margin: 0px vars.$padding-m vars.$padding-s vars.$padding-m;
+      }
+    }
   }
 
   @include break('medium') {
     .shortener {
-      &__form {
+      &__container {
         background: vars.$violet100 url('../../assets/img/bg-shorten-desktop.svg') no-repeat;
+        padding: vars.$padding-l;
+
+        form {
+          flex-direction: row;
+          input {
+            margin-right: vars.$padding-m;
+            margin-bottom: 0;
+          }
+        }
+      }
+      &__links {
+        .link {
+          align-items: center;
+          flex-direction: row;
+
+          &--original {
+            width: 400px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border:  0;
+          }
+          &--shortened {
+            text-align: right;
+          }
+          button {
+            margin: vars.$padding-s vars.$padding-m vars.$padding-s 15px;
+          }
+        }
       }
     }
   }
