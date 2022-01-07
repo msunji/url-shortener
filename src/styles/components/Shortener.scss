@@ -1,0 +1,21 @@
+@use '../vars';
+@use '../mixins' as *;
+
+.shortener {
+  position: relative;
+  top: -50px;
+  &__form {
+    width: 100%;
+    background: vars.$violet100 url('../../assets/img/bg-shorten-mobile.svg') no-repeat top right;
+    padding: vars.$padding-m;
+    border-radius: 10px;
+  }
+
+  @include break('medium') {
+    .shortener {
+      &__form {
+        background: vars.$violet100 url('../../assets/img/bg-shorten-desktop.svg') no-repeat;
+      }
+    }
+  }
+}
