@@ -1,10 +1,12 @@
 import '../styles/components/Statistics.scss';
+import Shortener from './Shortener';
 import Card from './Card';
 
 const Statistics = () => {
   return (
     <section className="statistics">
       <div className="statistics__container">
+        <Shortener />
         <div className="statistics__text">
           <h2>Advanced Statistics</h2>
           <p>Track how your links are performing across the web with our advanced statistics dashboard.</p>
