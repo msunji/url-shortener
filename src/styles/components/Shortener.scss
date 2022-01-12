@@ -7,27 +7,46 @@
   &__container {
     width: 100%;
     background: vars.$violet100 url('../../assets/img/bg-shorten-mobile.svg') no-repeat top right;
-    padding: vars.$padding-m;
+    padding: vars.$padding-m vars.$padding-m calc(vars.$padding-m - 10px) vars.$padding-m;
     border-radius: 10px;
 
     form {
       width: 100%;
       display: flex;
       flex-direction: column;
-      input {
-        outline: none;
-        width: 100%;
-        border: none;
-        flex: 1;
-        padding: calc(vars.$padding-s/1.4) vars.$padding-s;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        color: vars.$blue-desat;
 
-        &::placeholder {
+      .form__input {
+        width: 100%;
+        margin-bottom: 10px;
+        flex: 1;
+
+        input {
+          outline: none;
+          border: none;
+          width: 100%;
+          padding: calc(vars.$padding-s/1.4) vars.$padding-s;
+          border-radius: 5px;
           color: vars.$blue-desat;
+          margin-bottom: 10px;
+  
+          &::placeholder {
+            color: vars.$blue-desat;
+          }
         }
       }
+
+    }
+
+    .error-msg {
+      font-weight: 500;
+      color: vars.$red;
+      opacity: 0;
+      height: 0;
+      font-size: 0.8rem;
+
+      &.active {
+        opacity: 100;
+      }      
     }
   }
   &__links {
@@ -41,6 +60,7 @@
       display: flex;
       flex-direction: column;
       align-items: stretch;
+      margin-bottom: vars.$padding-s;
 
       p {
         padding: vars.$padding-s vars.$padding-m;
@@ -70,13 +90,15 @@
     .shortener {
       &__container {
         background: vars.$violet100 url('../../assets/img/bg-shorten-desktop.svg') no-repeat;
-        padding: vars.$padding-l;
+        padding: vars.$padding-l vars.$padding-l calc(vars.$padding-l - 10px) vars.$padding-l;
 
         form {
           flex-direction: row;
-          input {
-            margin-right: vars.$padding-m;
+          align-items: flex-start;
+
+          .form__input {
             margin-bottom: 0;
+            margin-right: vars.$padding-m;
           }
         }
       }
