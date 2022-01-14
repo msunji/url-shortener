@@ -32,6 +32,14 @@
           &::placeholder {
             color: vars.$blue-desat;
           }
+
+          &.error {
+            outline: 3px solid vars.$red;
+            &::placeholder {
+              color: vars.$red;
+              opacity: 0.8;
+            }
+          }
         }
       }
 
