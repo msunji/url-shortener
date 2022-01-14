@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import '../styles/components/Shortener.scss';
 import Button from './Button';
 
@@ -13,8 +13,12 @@ const Link = ({ id, original, shortened }) => {
 }
 
 const Shortener = () => {
-  const [origUrl, setOrigUrl] = useState('');
-  const [shortenedUrls, setShortenedUrls ] = useState([]);
+  const [origUrl, setOrigUrl] = useState("");
+  const [shortenedUrls, setShortenedUrls ] = useState(() => {
+    const storageData = localStorage.getItem("urls");
+    const initData = JSON.parse(storageData);
+    return initData || [];
+  });
   const [err, setErr] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -23,17 +27,26 @@ const Shortener = () => {
   }
 
   const handleShortening = (result) => {
-    setShortenedUrls([...shortenedUrls, {
-      id: new Date().getTime(), 
-      original: origUrl,
-      shortened: result.full_short_link
-    }]);
+    setShortenedUrls((prevUrls) => {
+      const urls = [...shortenedUrls, { 
+        id: new Date().getTime(),
+        original: origUrl,
+        shortened: result.full_short_link
+      }];
+      if (localStorage) {
+        localStorage.setItem("urls", JSON.stringify(urls));
+      }
+      return urls;
+    });
+    setOrigUrl('');
     setIsLoading(false);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (origUrl) {
+    if (!e.target.checkValidity()) {
+      setErr(true);
+    } else {
       setIsLoading(true);
       fetch(`https://api.shrtco.de/v2/shorten?url=${origUrl}`, {
               method: 'POST'
@@ -42,25 +55,22 @@ const Shortener = () => {
               result
           }) => handleShortening(result))
     }
-    if (origUrl === '') {
-      setErr(true);
-    }
   }
 
   return (
       <div className="shortener">
         <div className="shortener__container">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} noValidate>
             <div className="form__input">
-              <input className={`${err ? 'error' : ''}`} type="text" value={origUrl} placeholder="Shorten a link here..." onChange={handleChange} />
-              <p className={`error-msg ${err ? 'active' : ''}`}>Please add a link</p>
+              <input id="input-url" className={`${err ? 'error' : ''}`} type="url" value={origUrl} placeholder="Shorten a link here..." onChange={handleChange} required />
+              <p className={`error-msg ${err ? 'active' : ''}`}>Please add a valid link</p>
             </div>
             <Button color="cyan" shape="rounded">{ isLoading ? 'Loading...' : 'Shorten It!'}</Button>
           </form>
 
         </div>
         <ul className="shortener__links">
-          { shortenedUrls.map(({ id, original, shortened }) => (<Link key={id} original={original} shortened={shortened} />))}
+          { shortenedUrls ? shortenedUrls.map(({ id, original, shortened }) => (<Link key={id} original={original} shortened={shortened} />)) : null}
         </ul>
       </div>
   )
