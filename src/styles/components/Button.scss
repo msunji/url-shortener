@@ -23,6 +23,9 @@ button {
   &.rounded {
     border-radius: 5px;
   }
+  &.copied {
+    background-color: vars.$violet100;
+  }
 }
 
 @each $name, $color in $colors {
