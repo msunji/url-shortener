@@ -5,7 +5,7 @@ import '../styles/components/Navbar.scss';
 
 const Navbar = () => {
   const [ open, setOpen ] = useState(false);
-  console.log(open);
+
   return (
     <nav>
       <div className="nav__container">
@@ -21,7 +21,7 @@ const Navbar = () => {
             <span>Pricing</span>
             <span>Resources</span>
           </div>
-          <hr className="nav__links__divider" />
+          <hr />
           <div className="nav__links--right">
             <span>Login</span>
             <Button color="cyan" shape="pill">Sign Up</Button>
