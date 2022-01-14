@@ -15,7 +15,7 @@
       display: flex;
       flex-direction: column;
 
-      .form__input {
+      .form-input {
         width: 100%;
         margin-bottom: 10px;
         flex: 1;
@@ -108,7 +108,7 @@
           flex-direction: row;
           align-items: flex-start;
 
-          .form__input {
+          .form-input {
             margin-bottom: 0;
             margin-right: vars.$padding-m;
           }

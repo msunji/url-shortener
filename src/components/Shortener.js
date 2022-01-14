@@ -69,7 +69,7 @@ const Shortener = () => {
       <div className="shortener">
         <div className="shortener__container">
           <form onSubmit={handleSubmit} noValidate>
-            <div className="form__input">
+            <div className="form-input">
               <input id="input-url" className={`${err ? 'error' : ''}`} type="url" value={origUrl} placeholder="Shorten a link here..." onChange={handleChange} required />
               <p className={`error-msg ${err ? 'active' : ''}`}>Please add a valid link</p>
             </div>
