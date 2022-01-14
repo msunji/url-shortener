@@ -13,7 +13,7 @@ const Link = ({ id, original, shortened }) => {
     <li key={id} className="link">
       <p className="link--original">{original}</p> 
       <p className="link--shortened">{shortened}</p>
-      <div onClick={() => handleCopy(shortened)}>
+      <div className="copy-button-container" onClick={() => handleCopy(shortened)}>
         <Button color="cyan" shape="rounded" copied={`${isCopied ? 'copied' : null}`}>{isCopied ? 'Copied!' : 'Copy'}</Button>
       </div>
     </li>

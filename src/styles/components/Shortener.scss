@@ -88,9 +88,13 @@
         color: vars.$cyan;
         flex: 1;
       }
-      button {
+      .copy-button-container {
         margin: 0px vars.$padding-m vars.$padding-s vars.$padding-m;
+        button {
+          width: 100%;
+        }
       }
+
     }
   }
 
@@ -125,7 +129,7 @@
           &--shortened {
             text-align: right;
           }
-          button {
+          .copy-button-container {
             margin: vars.$padding-s vars.$padding-m vars.$padding-s 15px;
           }
         }
