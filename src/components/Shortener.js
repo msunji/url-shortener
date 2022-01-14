@@ -1,14 +1,22 @@
-import { useEffect, useState, useRef } from 'react';
+import { useState } from 'react';
 import '../styles/components/Shortener.scss';
 import Button from './Button';
 
 const Link = ({ id, original, shortened }) => {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopy = (url) => {
+    navigator.clipboard.writeText(url);
+    setIsCopied(true);
+  }
   return (
     <li key={id} className="link">
       <p className="link--original">{original}</p> 
       <p className="link--shortened">{shortened}</p>
-      <Button color="cyan" shape="rounded">Copy</Button>
-  </li>
+      <div onClick={() => handleCopy(shortened)}>
+        <Button color="cyan" shape="rounded" copied={`${isCopied ? 'copied' : null}`}>{isCopied ? 'Copied!' : 'Copy'}</Button>
+      </div>
+    </li>
   )
 }
 
