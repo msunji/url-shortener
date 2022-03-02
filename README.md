@@ -1,11 +1,11 @@
 # Frontend Mentor Challenges: URL Shortening Landing Page
 
-<p style="align: center;">
+<p align="center">
 <img src="https://res.cloudinary.com/dxzcdb0pm/image/upload/v1646206235/fem-compilation/url-shortener_kqz45u.png" alt="URL Shortening Landing Page Preview" />
 </p>
 <br />
 <div style="text-align: center;">
-  <div style="display: flex;">
+  <div>
   <a href="https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G">View Challenge</a> | <a href="https://url-shortener-msunji.vercel.app/">View Live Site</a>
   </div>
 </div>
