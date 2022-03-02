@@ -1,5 +1,11 @@
 # Frontend Mentor Challenges: URL Shortening Landing Page
+
+<div style="text-align: center">
+![URL Shortening Landing Page Solution](https://res.cloudinary.com/dxzcdb0pm/image/upload/v1646206235/fem-compilation/url-shortener_kqz45u.png)
+<br />
 [View Challenge](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G) | [View Solution](https://url-shortener-msunji.vercel.app/)
+
+</div>
 
 Users should be able to: 
 - View the optimal layout depending on their screen size
