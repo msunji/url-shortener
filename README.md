@@ -8,7 +8,7 @@
   <a href="https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G">View Challenge</a> | <a href="https://url-shortener-msunji.vercel.app/">View Live Site</a>
 </div>
 
-<br >
+<br />
 
 Users should be able to: 
 - View the optimal layout depending on their screen size
