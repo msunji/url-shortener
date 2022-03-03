@@ -6,7 +6,7 @@
 <br />
 <p align="center">
   <a href="https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G">View Challenge</a> | <a href="https://url-shortener-msunji.vercel.app/">View Live Site</a>
-</div>
+</p>
 
 <br />
 
