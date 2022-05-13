@@ -21,5 +21,9 @@
 
   @include break('medium') {
     background-image: url('../../assets/img/bg-boost-desktop.svg');
+
+    h2 {
+      font-size: 2.5em;
+    }
   }
 }
