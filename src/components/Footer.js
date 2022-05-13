@@ -13,32 +13,33 @@ const Footer = () => {
           <Logo className="logo" />
         </div>
         <div className="link-container">
-          <h4>Features</h4>
+          <h3>Features</h3>
           <span>Link Shortening</span>
           <span>Branded Links</span>
           <span>Analytics</span>
         </div>
         <div className="link-container">
-          <h4>Resources</h4>
+          <h3>Resources</h3>
           <span>Blog</span>
           <span>Developers</span>
           <span>Support</span>
         </div>
         <div className="link-container">
-          <h4>Company</h4>
-          <span>Link Shortening</span>
-          <span>Branded Links</span>
-          <span>Analytics</span>
+          <h3>Company</h3>
+          <span>About</span>
+          <span>Our Team</span>
+          <span>Careers</span>
+          <span>Contact</span>
         </div>
         <div className="icon-container">
           <FBIcon />
           <TWIcon />
-          <PinIcon/>
+          <PinIcon />
           <IGIcon />
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
 export default Footer;
